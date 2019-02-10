@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html >
+<html ng-app="movies" ng-controller="startmovie">
+<head>
+    <meta charset="utf-8" />
+    <title>Getting connection with API and extracting Data to View using AngularJS</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="/scripts/style.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="/scripts/JavaScript.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<div class="naslovnica">Movie Browser</div><br>
+
+<div class="sear">
+    <form>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="film">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit" ng-click="click()">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+
+            </div>
+        </div>
+    </form>
+    <i> Movies from The Movie Database website. Total results found</i><b> {{movie.total_results}}</b>&nbsp;<i>with</i><b> {{movie.total_pages}}</b>&nbsp;<i>pages rounded up.</i>
+    <br>
+    
+    <form>
+        <input type="text" class="form-control" placeholder="After you entered name, you can filter here by year" ng-model="year"> <br><br>
+
+    </form>
+
+</div>
+<body>
+    
+    <div class="container-fluid">
+
+        <div class="row,col-xs-2">
+
+
+        </div>
+
+        <div class="row">
+
+            <div ng-repeat="s in movie.results | filter:year">
+
+                <div class="movietab">
+                    <span class="poster">
+                        <img check-Image ng-src="https://image.tmdb.org/t/p/w500/{{s.poster_path}} " alt="poster">
+                    </span>
+                    <div id="opis">
+
+                        <div id="naslovfilm">{{s.original_title}}</div>
+
+                        <br><span id="naslov">Year of the release:</span><i>{{s.release_date}}</i>
+                        <br><span id="naslov">movie ID:</span><i>{{s.id}}</i>
+                        <br><span id="naslov">Original Language:</span> <i>{{s.original_language}}</i>
+                        <br><span id="naslov">Plot:</span><i>{{s.overview | limitTo:250}}</i>
+
+
+
+                    </div>
+                    <span class="glyphicon glyphicon-download-alt gliphleft" aria-hidden="true"><a href="https://thepiratebay.org/search/{{s.original_title}}">ThePirateBay </a></span>
+                    <span class="glyphicon glyphicon-eye-open gliphleft" aria-hidden="true"><a href="http://www.imdb.com/find?ref_=nv_sr_fn&q={{s.original_title}}&s=all">Imdb</a></span>
+                    <span class="glyphicon glyphicon-star gliphleft" aria-hidden="true">{{s.popularity}} </span>
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="pag">
+
+        <button type="button" class="btn btn-success" ng-click="previousPage()">previous page</button>
+        <button type="button" class="btn btn-success" ng-click="nextPage()">next page</button>
+    </div>
+       
+    </div>
+</body>
+
+</html>

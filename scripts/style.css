@@ -1,0 +1,94 @@
+﻿body {
+  margin: 10px !important;
+  width: auto;
+  
+  padding: 10px;
+  border-radius: 10px;
+  
+}
+#naslov {
+    font-weight: bold;
+}
+.poster {
+    box-shadow: 4px 2px 5px #000;
+    display: block;
+    float: left;
+    height: auto;
+    position: relative;
+    width: auto;
+    border-radius:10px;
+
+}
+#opis {
+    display: block;
+    float: left;
+    height: 280px;
+    padding: 5px;
+    position: relative;
+    width: 240px;
+}
+.poster img {
+    height: 340px;
+    width: 230px;
+    border-radius:10px;
+
+}
+#trazi {
+    float:left;
+    display:block;
+    width:auto;
+}
+.smanji {
+    width:200px;
+}
+.naslovnica {
+    text-align:center;
+    font-size:20px;
+    margin: 0 auto;
+    width:200px;
+    text-shadow:2px 0px 2px #123; 
+}
+ul
+li,ul{
+    list-style-type: none !important;
+    }
+.movietab {
+    
+    border: 1px solid #ddd;
+    float: left;
+    height: 650px;
+    margin: 4px;
+    padding: 4px;
+    width: 250px;
+}
+.sear {
+    display: block;
+    margin: 0 auto;
+    max-width: 700px;
+    min-width: 220px;
+}
+#naslovfilm {
+    color: #000;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 0.8;
+    text-shadow: 1px 1px 1px #999;
+}
+.pag {
+    margin:0 auto;
+    width:230px;
+    height:auto;
+}
+.gliphleft {
+    float:left;
+    padding-left: 5px;
+}
+.gliphleft a {
+    color:#999;
+   
+    }
+    .gliphleft a:hover {
+        color:#f49e42;
+        text-decoration:none;
+
+    }
